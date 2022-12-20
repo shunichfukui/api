@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 # Description/Explanation of Post class
-
-class PostsController < ApplicationController
+class Api::V1::PostsController < Api::ApplicationController
   before_action :set_post, only: %i[show update destroy]
 
   # GET /posts

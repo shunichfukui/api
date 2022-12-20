@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::PostsController', type: :request do
+RSpec.describe 'Api::V1::PostsController', type: :request do
   describe 'GET /posts' do
     before do
       create_list(:post, 3)
     end
-    let!(:path) { posts_path }
+    let!(:path) { api_v1_posts_path }
 
     subject do
       get path
