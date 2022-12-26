@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::PostsController', type: :request do
-  describe 'GET /posts' do
+RSpec.describe 'Api::V1::PortfoliosController', type: :request do
+  describe 'GET /portfolios' do
     before do
-      create_list(:post, 3)
+      create_list(:portfolio, 3)
     end
-    let!(:path) { api_v1_posts_path }
+    let!(:path) { api_v1_portfolios_path }
 
     subject do
       get path

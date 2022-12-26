@@ -10,11 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_30_041702) do
+ActiveRecord::Schema.define(version: 2022_12_26_142909) do
 
-  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci", force: :cascade do |t|
+  create_table "portfolios", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "title", null: false
+    t.integer "status", default: 0, null: false, unsigned: true
     t.string "description", null: false
+    t.string "image_url", default: "", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_portfolios_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "name", limit: 20, default: "", null: false
+    t.string "password_digest", limit: 254
+    t.string "email", limit: 254, default: "", null: false
+    t.integer "status", default: 0, null: false, unsigned: true
+    t.integer "gender", default: 0, null: false, unsigned: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
