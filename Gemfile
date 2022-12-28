@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-retry'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 group :development do

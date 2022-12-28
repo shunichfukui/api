@@ -6,7 +6,7 @@ class Api::V1::PortfoliosController < Api::ApplicationController
 
   # GET /portfolios
   def index
-    @portfolios = portfolio.all
+    @portfolios = Portfolio.all
 
     render json: PortfolioResource.new(@portfolios).serialize
   end
@@ -18,7 +18,7 @@ class Api::V1::PortfoliosController < Api::ApplicationController
 
   # portfolio /portfolios
   def create
-    @portfolio = portfolio.new(portfolio_params)
+    @portfolio = Portfolio.new(portfolio_params)
 
     if @portfolio.save
       render json: @portfolio, status: :created, location: @portfolio
@@ -45,7 +45,7 @@ class Api::V1::PortfoliosController < Api::ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_portfolio
-    @portfolio = portfolio.find(params[:id])
+    @portfolio = Portfolio.find(params[:id])
   end
 
   # Only allow a trusted parameter "white list" through.

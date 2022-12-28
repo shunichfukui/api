@@ -7,7 +7,7 @@ class CreatePortfolios < ActiveRecord::Migration[6.0]
       t.integer :status,  limit: 4, null: false, unsigned: true, default: 0
       t.string :description, null: false
       t.string :image_url, null: false, default: ''
-      t.references :user,    index: true
+      t.references :user,    index: true, null: false
 
       t.timestamps
     end

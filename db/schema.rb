@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2022_12_26_142909) do
     t.integer "status", default: 0, null: false, unsigned: true
     t.string "description", null: false
     t.string "image_url", default: "", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_portfolios_on_user_id"
